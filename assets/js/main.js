@@ -28,15 +28,15 @@
 })(jQuery);
 
 // Кнопка_Показать еще_на странице_Галерея работ
-$(".section_show_more").each(function() {
-		let more = $(this).find(".show_more");
-		let hide = $(this).find(".hide_content");
-		hide.hide();
-		more.click(function() {
-				hide.slideToggle();
-				more.text(more.text() == "Hide" ? "Show more" : "Hide");
-		});
-});
+// $(".section_show_more").each(function() {
+// 		let more = $(this).find(".show_more");
+// 		let hide = $(this).find(".hide_content");
+// 		hide.hide();
+// 		more.click(function() {
+// 				hide.slideToggle();
+// 				more.text(more.text() == "Hide" ? "Show more" : "Hide");
+// 		});
+// });
 
 
 // copy text button
