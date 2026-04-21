@@ -613,9 +613,29 @@ a:visited {
 					  <div class="main_support main special">
 
 					    <h3>
-                Если вы хотите финансово поддержать нашу семью, вы можете сделать это через криптовалюту (USDT)
+                Если вы хотите финансово поддержать нашу семью, вы можете сделать это несколькими способами. 
 					    </h3>
 
+
+               <p style="margin-bottom: 10px;">
+                <strong>Поддержка в рублях</strong>
+              </p>
+
+                <p style="margin-bottom: 0; font-size:14px;">
+                  💳 Карта (Т-Банк / Сбер):<br>
+                  <span id="phone_number">
+                    +7 922 138 7487
+                  </span>
+
+                  <button class="button_copy" id="copyPhone" style="margin-left:8px;">
+                    <i class="fas fa-copy"></i>
+                  </button>
+                </p>
+
+               <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+                 <p style="margin-bottom: 10px;">
+                <strong>через криптовалюту (USDT):</strong>
+              </p>
               <p style="margin-top: 10px; margin-bottom: 15px; color:#aaa; font-size:14px;">
                 Даже небольшая поддержка имеет значение:
                 <br>
@@ -653,7 +673,9 @@ a:visited {
                 Отправляйте USDT только через сеть TRON (TRC20). Отправка через другую сеть может привести к потере средств.
 					    </p>
 
+
 					  </div>
+
 					</div>
  
 			</div>
@@ -665,14 +687,32 @@ a:visited {
 
 <div id="copyToast" class="copy-toast">Copied ✔</div>
 
-
 <script>
-	document.getElementById('copy').addEventListener('click', function () {
-  const walletText = document.getElementById('text_for_copy').innerText;
+function copyToClipboard(elementId) {
+  const text = document.getElementById(elementId).innerText;
 
-  navigator.clipboard.writeText(walletText).then(() => {
+  navigator.clipboard.writeText(text).then(() => {
     showCopyToast();
   });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const copyWalletBtn = document.getElementById('copy');
+  const copyPhoneBtn = document.getElementById('copyPhone');
+
+  if (copyWalletBtn) {
+    copyWalletBtn.addEventListener('click', function () {
+      copyToClipboard('text_for_copy');
+    });
+  }
+
+  if (copyPhoneBtn) {
+    copyPhoneBtn.addEventListener('click', function () {
+      copyToClipboard('phone_number');
+    });
+  }
+
 });
 
 function showCopyToast() {
@@ -685,8 +725,6 @@ function showCopyToast() {
   }, 1500);
 }
 </script>
-
-
 
 
 
